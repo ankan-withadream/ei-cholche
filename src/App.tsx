@@ -1,11 +1,13 @@
 import "./App.css";
-import Sidebar from "./components/sidebar";
+
+import Layout from "./layout";
+import Chats from "./pages/Chats";
 
 function App() {
   return (
-    <>
-    <Sidebar/>
-    </>
+    <Layout>
+      <Chats />
+    </Layout>
   );
 }
 

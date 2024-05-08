@@ -1,6 +1,6 @@
 import "./sidebar.css";
-import logo from "../../assets/logo.svg";
-import avater05 from "../../assets/avatar-5.jpg";
+import logo from "../assets/logo.svg";
+import avater05 from "../assets/avatar-5.jpg";
 import {
   Contact2,
   GroupIcon,
@@ -10,8 +10,9 @@ import {
   Sun,
   User2,
 } from "lucide-react";
+import { ReactNode } from "react";
 
-const Sidebar = () => {
+const Layout = ({children}:{children:ReactNode}) => {
   return (
     <>
       <div className="sidebar-menu w-full lg:w-[75px] shadow lg:flex lg:flex-col flex flex-row justify-between items-center fixed lg:relative z-40 bottom-0 bg-white dark:bg-zinc-600 ">
@@ -40,7 +41,7 @@ const Sidebar = () => {
                 href="#first"
                 className="tab-button flex relative items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex rtl:right-0">
+                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex ">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Profile
@@ -55,7 +56,7 @@ const Sidebar = () => {
                 href="#second"
                 className="tab-button active relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex rtl:right-0">
+                <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Chats
@@ -70,7 +71,7 @@ const Sidebar = () => {
                 href="#third"
                 className="tab-button relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex rtl:right-0">
+                <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Groups
@@ -85,7 +86,7 @@ const Sidebar = () => {
                 href="#fourth"
                 className="tab-button relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex rtl:right-0">
+                <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Contacts
@@ -100,7 +101,7 @@ const Sidebar = () => {
                 href="#fifth"
                 className="tab-button relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex rtl:right-0">
+                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Settings
@@ -144,39 +145,39 @@ const Sidebar = () => {
               >
                 <li>
                   <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 ltr:text-left rtl:text-right"
+                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
                     href="#"
                   >
                     Profile{" "}
-                    <i className="text-gray-500 rtl:float-left ltr:float-right ri-profile-line text-16"></i>
+                    <i className="text-gray-500  float-right ri-profile-line text-16"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 ltr:text-left rtl:text-right"
+                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
                     href="#"
                   >
                     Setting{" "}
-                    <i className="text-gray-500 rtl:float-left ltr:float-right ri-settings-3-line text-16"></i>
+                    <i className="text-gray-500 float-right ri-settings-3-line text-16"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 ltr:text-left rtl:text-right"
+                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left "
                     href="https://themesbrand.com/chatvia-tailwind/layouts/auth-lock-screen.html"
                   >
                     Lock Screen{" "}
-                    <i className="text-gray-500 rtl:float-left ltr:float-right ri-git-repository-private-line text-16"></i>
+                    <i className="text-gray-500 float-right ri-git-repository-private-line text-16"></i>
                   </a>
                 </li>
                 <li className="my-2 border-b border-gray-100/20"></li>
                 <li>
                   <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 ltr:text-left rtl:text-right"
+                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
                     href="https://themesbrand.com/chatvia-tailwind/layouts/auth-login.html"
                   >
                     Log out{" "}
-                    <i className="text-gray-500 rtl:float-left ltr:float-right ri-logout-circle-r-line text-16"></i>
+                    <i className="text-gray-500 float-right ri-logout-circle-r-line text-16"></i>
                   </a>
                 </li>
               </ul>
@@ -184,8 +185,11 @@ const Sidebar = () => {
           </ul>
         </div>
       </div>
+      <div className="chat-leftsidebar lg:w-[380px] group-data-[theme-color=violet]:bg-slate-50 group-data-[theme-color=green]:bg-green-50/20 group-data-[theme-color=red]:bg-red-50/20 shadow overflow-y-hidden mb-[80px] lg:mb-0 group-data-[theme-color=violet]:dark:bg-zinc-700 group-data-[theme-color=green]:dark:bg-zinc-700 group-data-[theme-color=red]:dark:bg-zinc-700">
+      {children}
+      </div>
     </>
   );
 };
 
-export default Sidebar;
+export default Layout;
