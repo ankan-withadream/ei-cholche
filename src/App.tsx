@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
-
+ 
+  // Useffect to query windown width. 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);

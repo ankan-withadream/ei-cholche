@@ -1,6 +1,6 @@
 import { File, SendHorizonalIcon } from "lucide-react";
 
-import ChatHeader from "@/components/chatheader";
+import ChatHeader from "@/components/Chatheader";
 import Bubble1 from "@/components/Chatbubble/Bubble1";
 import Bubble2 from "@/components/Chatbubble/Bubble2";
 import Chatdate from "@/components/Chatdate";

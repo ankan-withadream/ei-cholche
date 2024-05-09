@@ -13,19 +13,15 @@ import { ReactNode } from "react";
 const Layout = ({children}:{children:ReactNode}) => {
   return (
     <>
-      <div className="sidebar-menu w-full lg:w-[75px] shadow lg:flex lg:flex-col flex flex-row justify-between items-center fixed lg:relative z-40 bottom-0 bg-white dark:bg-zinc-600 ">
+      <div className="sidebar-menu w-full lg:w-[75px] shadow lg:flex lg:flex-col flex flex-row justify-between items-center fixed lg:relative z-40 bottom-0 bg-white">
         <div className="hidden lg:my-5 lg:block">
-          <a href="#" className="block dark:hidden">
+          <a href="#" className="block">
             <span>
               <img src={logo} alt="" className="h-[30px]" />
             </span>
           </a>
 
-          <a href="#" className="hidden dark:block">
-            <span>
-              <img src={logo} alt="" className="h-[30px]" />
-            </span>
-          </a>
+          
         </div>
 
         <div className="w-full mx-auto lg:my-auto">
@@ -36,7 +32,7 @@ const Layout = ({children}:{children:ReactNode}) => {
             <li className="flex-grow lg:flex-grow-0">
               <a
                 id="default-tab"
-                href="#first"
+                href="/profile"
                 className="tab-button flex relative items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
                 <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex ">
@@ -51,7 +47,7 @@ const Layout = ({children}:{children:ReactNode}) => {
             </li>
             <li className="flex-grow lg:flex-grow-0">
               <a
-                href="#second"
+                href="/chats"
                 className="tab-button active relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
                 <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
@@ -81,7 +77,7 @@ const Layout = ({children}:{children:ReactNode}) => {
             </li>
             <li className="flex-grow lg:flex-grow-0">
               <a
-                href="#fourth"
+                href="/contacts"
                 className="tab-button relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
                 <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
@@ -126,57 +122,14 @@ const Layout = ({children}:{children:ReactNode}) => {
                 <img
                   src={avater05}
                   alt=""
-                  className="w-10 h-10 p-1 mx-auto rounded-full bg-gray-50 dark:bg-zinc-700"
+                  className="w-10 h-10 p-1 mx-auto rounded-full bg-gray-50"
                 />
               </a>
-
-              <ul
-                className="absolute z-40 hidden float-left w-40 py-2 mx-4 mb-12 text-left list-none bg-white border-none rounded-lg shadow-lg dropdown-menu bg-clip-padding dark:bg-zinc-700"
-                aria-labelledby="dropdownButton2"
-              >
-                <li>
-                  <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
-                    href="#"
-                  >
-                    Profile{" "}
-                    <i className="text-gray-500  float-right ri-profile-line text-16"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
-                    href="#"
-                  >
-                    Setting{" "}
-                    <i className="text-gray-500 float-right ri-settings-3-line text-16"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left "
-                    href="https://themesbrand.com/chatvia-tailwind/layouts/auth-lock-screen.html"
-                  >
-                    Lock Screen{" "}
-                    <i className="text-gray-500 float-right ri-git-repository-private-line text-16"></i>
-                  </a>
-                </li>
-                <li className="my-2 border-b border-gray-100/20"></li>
-                <li>
-                  <a
-                    className="block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100/30 dark:text-gray-100 dark:hover:bg-zinc-600/50 text-left"
-                    href="https://themesbrand.com/chatvia-tailwind/layouts/auth-login.html"
-                  >
-                    Log out{" "}
-                    <i className="text-gray-500 float-right ri-logout-circle-r-line text-16"></i>
-                  </a>
-                </li>
-              </ul>
             </li>
           </ul>
         </div>
       </div>
-      <div className="chat-leftsidebar lg:w-[380px] group-data-[theme-color=violet]:bg-slate-50 group-data-[theme-color=green]:bg-green-50/20 group-data-[theme-color=red]:bg-red-50/20 shadow overflow-y-hidden mb-[80px] lg:mb-0 group-data-[theme-color=violet]:dark:bg-zinc-700 group-data-[theme-color=green]:dark:bg-zinc-700 group-data-[theme-color=red]:dark:bg-zinc-700">
+      <div className="chat-leftsidebar lg:w-[380px]    shadow overflow-y-hidden mb-[80px] lg:mb-0">
       {children}
       </div>
     </>
