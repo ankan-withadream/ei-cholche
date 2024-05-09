@@ -7,13 +7,16 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: "yes",
+  prefix: "",
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
       },
     },
     extend: {
