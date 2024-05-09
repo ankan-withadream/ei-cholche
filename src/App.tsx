@@ -7,11 +7,12 @@ import Contacts from "./pages/Contacts";
 import Profile from "./pages/Profile";
 import ChatRoom from "./pages/Chatroom";
 import { useEffect, useState } from "react";
+import Login from "./pages/Auth/Login";
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
- 
-  // Useffect to query windown width. 
+
+  // Useffect to query windown width.
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
@@ -29,6 +30,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
+
         <Route
           path="/chats"
           element={
@@ -43,9 +46,7 @@ function App() {
           element={
             <>
               {isMobile ? (
-                
-                  <ChatRoom />
-                
+                <ChatRoom />
               ) : (
                 <>
                   <Layout>
