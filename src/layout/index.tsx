@@ -2,9 +2,6 @@ import "./sidebar.css";
 import logo from "../assets/logo.svg";
 import avater05 from "../assets/avatar-5.jpg";
 import {
-  AirVent,
-  Airplay,
-  ChefHatIcon,
   Contact2,
   GroupIcon,
   MessageCircle,
