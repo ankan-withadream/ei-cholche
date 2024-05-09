@@ -5,9 +5,26 @@ import Layout from "./layout";
 import Chats from "./pages/Chats";
 import Contacts from "./pages/Contacts";
 import Profile from "./pages/Profile";
-
+import ChatRoom from "./pages/Chatroom";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Router>
       <Routes>
@@ -17,6 +34,26 @@ function App() {
             <Layout>
               <Chats />
             </Layout>
+          }
+        />
+
+        <Route
+          path="/chats/:roomId"
+          element={
+            <>
+              {isMobile ? (
+                
+                  <ChatRoom />
+                
+              ) : (
+                <>
+                  <Layout>
+                    <Chats />
+                  </Layout>
+                  <ChatRoom />
+                </>
+              )}
+            </>
           }
         />
 

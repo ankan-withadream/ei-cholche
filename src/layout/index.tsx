@@ -5,9 +5,7 @@ import {
   Contact2,
   GroupIcon,
   MessageCircle,
-  Moon,
   Settings2,
-  Sun,
   User2,
 } from "lucide-react";
 import { ReactNode } from "react";
@@ -41,7 +39,7 @@ const Layout = ({children}:{children:ReactNode}) => {
                 href="#first"
                 className="tab-button flex relative items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex ">
+                <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex ">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Profile
@@ -101,7 +99,7 @@ const Layout = ({children}:{children:ReactNode}) => {
                 href="#fifth"
                 className="tab-button relative flex items-center justify-center mx-auto h-14 w-14 leading-[14px] group/tab my-2 rounded-lg"
               >
-                <div className="absolute items-center hidden -top-10 ltr:left-0 group-hover/tab:flex">
+                <div className="absolute items-center hidden -top-10 left-0 group-hover/tab:flex">
                   <div className="absolute -bottom-1 left-[40%] w-3 h-3 rotate-45 bg-black"></div>
                   <span className="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black rounded shadow-lg">
                     Settings
@@ -116,14 +114,7 @@ const Layout = ({children}:{children:ReactNode}) => {
 
         <div className="w-20 my-5 lg:w-auto">
           <ul className="lg:block">
-            <li className="hidden text-center light-dark-mode nav-item lg:block">
-              <a href="#" className="hidden dark:block dark:text-violet-100/80">
-                <Sun />
-              </a>
-              <a href="#" className="block text-gray-500 dark:hidden">
-                <Moon />
-              </a>
-            </li>
+            
 
             <li className="relative lg:mt-4 dropdown lg:dropup">
               <a
