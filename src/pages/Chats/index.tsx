@@ -1,55 +1,12 @@
-const data = [
-  {
-    name: "Patrik",
-    lastMessage: "Hello, How are you?",
-    lastMessageTime: "12 min",
-    active: false,
-    img: "https://randomuser.me/api/portraits/men/75.jpg",
-  },
-  {
-    name: "Archie",
-    lastMessage: "Tomorrow, 10.00AM.",
-    lastMessageTime: "05 min",
-    active: true,
-    img: "https://randomuser.me/api/portraits/women/27.jpg",
-  },
-  {
-    name: "Hazel",
-    lastMessage: "See you today!",
-    lastMessageTime: "17 min",
-    active: true,
-    img: "https://randomuser.me/api/portraits/men/17.jpg",
-  },
-  {
-    name: "Oscar",
-    lastMessage: "Images",
-    lastMessageTime: "15:34 PM",
-    active: false,
-    img: "https://randomuser.me/api/portraits/women/75.jpg",
-  },
-  {
-    name: "Jack",
-    lastMessage: "Thanks.",
-    lastMessageTime: "10:12 AM",
-    active: false,
-    img: "https://randomuser.me/api/portraits/men/16.jpg",
-  },
-  {
-    name: "Evelyn",
-    lastMessage: "Hello, How are you?",
-    lastMessageTime: "05 min",
-    active: false,
-    img: "https://randomuser.me/api/portraits/women/13.jpg",
-  },
-];
-
-const renderChats = (person, idx) => {
+import { Chat } from "@/types";
+import { chatdata } from "../../dummy";
+const renderChats = (person: Chat, idx: number) => {
   return (
     <li
       className="px-5 py-[15px] hover:bg-slate-100  transition-all ease-in-out border-b border-white/20 "
       key={idx}
     >
-      <a href="#">
+      <a href={`/chats/${idx}`}>
         <div className="flex">
           <div className="relative self-center mr-3">
             <img src={person.img} className="rounded-full w-9 h-9" alt="" />
@@ -100,11 +57,9 @@ const Chats = () => {
           <h5 className="px-6 mb-4 text-[16px] dark:text-gray-50">Recent</h5>
 
           <ul className="chat-user-list overflow-y-auto">
-            {
-              data.map((person, idx) => {
-                return renderChats(person, idx);
-              })
-            }
+            {chatdata.map((person, idx) => {
+              return renderChats(person, idx);
+            })}
           </ul>
         </div>
       </div>

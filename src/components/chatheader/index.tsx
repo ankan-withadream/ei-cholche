@@ -10,7 +10,7 @@ const ChatHeader = () => {
         <div className="flex items-center">
           <div className="block mr-2 lg:hidden">
             <a
-              href="#"
+              href="/chats"
               className="p-2 text-gray-500 user-chat-remove text-[16px]"
             >
               <ArrowLeft />

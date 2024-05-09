@@ -7,7 +7,7 @@ import Chatdate from "@/components/Chatdate";
 
 const ChatRoom = () => {
   return (
-    <div className="w-full overflow-hidden transition-all duration-150 bg-white user-chat">
+    <div className="overflow-hidden transition-all duration-150 bg-white user-chat">
       <div className="lg:flex">
         <div className="relative w-full overflow-hidden ">
           {/* --------------------- Chatbox Header---------------------*/}
