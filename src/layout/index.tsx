@@ -2,15 +2,19 @@ import "./sidebar.css";
 import logo from "../assets/logo.svg";
 import avater05 from "../assets/avatar-5.jpg";
 import {
+  AirVent,
+  Airplay,
+  ChefHatIcon,
   Contact2,
   GroupIcon,
   MessageCircle,
   Settings2,
   User2,
+  WheatIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
-const Layout = ({children}:{children:ReactNode}) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <div className="sidebar-menu w-full lg:w-[75px] shadow lg:flex lg:flex-col flex flex-row justify-between items-center fixed lg:relative z-40 bottom-0 bg-white">
@@ -20,8 +24,6 @@ const Layout = ({children}:{children:ReactNode}) => {
               <img src={logo} alt="" className="h-[30px]" />
             </span>
           </a>
-
-          
         </div>
 
         <div className="w-full mx-auto lg:my-auto">
@@ -110,8 +112,6 @@ const Layout = ({children}:{children:ReactNode}) => {
 
         <div className="w-20 my-5 lg:w-auto">
           <ul className="lg:block">
-            
-
             <li className="relative lg:mt-4 dropdown lg:dropup">
               <a
                 href="#"
@@ -130,8 +130,11 @@ const Layout = ({children}:{children:ReactNode}) => {
         </div>
       </div>
       <div className="chat-leftsidebar lg:w-[380px]    shadow overflow-y-hidden mb-[80px] lg:mb-0">
-      {children}
+        {children}
       </div>
+      <a href="/chats/123">
+        <WheatIcon size={40} className="fixed bottom-10 right-10" />
+      </a>
     </>
   );
 };
