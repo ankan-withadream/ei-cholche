@@ -1,6 +1,10 @@
 import { Chat } from "@/types";
 import { chatdata } from "../../dummy";
-const renderChats = (person: Chat, idx: number) => {
+import { useEffect } from "react";
+import appconfig from "../../../appconfig.json";
+
+const renderChats = (person: Chat, idx: number) => {  
+
   return (
     <li
       className="px-5 py-[15px] hover:bg-slate-100  transition-all ease-in-out border-b border-white/20 "
@@ -10,10 +14,8 @@ const renderChats = (person: Chat, idx: number) => {
         <div className="flex">
           <div className="relative self-center mr-3">
             <img src={person.img} className="rounded-full w-9 h-9" alt="" />
-            {person.active ? (
+            {person.active && (
               <span className="absolute w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full top-7 right-1 dark:border-zinc-600"></span>
-            ) : (
-              ""
             )}
           </div>
 
@@ -22,11 +24,11 @@ const renderChats = (person: Chat, idx: number) => {
               {person.name}
             </h5>
             <p className="mb-0 text-gray-500 truncate dark:text-gray-300 text-[14px]">
-              {person.lastMessage}
+              {person.lastMessage || ''}
             </p>
           </div>
           <div className="text-gray-500 text-[11px] dark:text-gray-300">
-            {person.lastMessageTime}
+            {person.lastMessageTime || ''}
           </div>
         </div>
       </a>
@@ -35,6 +37,28 @@ const renderChats = (person: Chat, idx: number) => {
 };
 
 const Chats = () => {
+
+    // Use useEffect to fetch data only once on component mount
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          if (!appconfig?.apiUrl) {
+            throw new Error('API URL is not defined');
+          }
+          const response = await fetch(`${appconfig.apiUrl}/kigo`);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []); // Empty array means this effect runs only once on component mount
+    
   return (
     <div className="tab-content active">
       <div>
